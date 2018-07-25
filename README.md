@@ -14,10 +14,11 @@ vi /etc/systemd/system/{myservice}.service
 
 cat {myservice}.service
 ```
-<code>
+***
+```
 [Unit]
-Description=Tetration Linux Enforcer
-After=network.target
+Description=Service Description
+After=network.target 
 
 [Service]
 Type=simple
@@ -31,7 +32,7 @@ StandardError=null
 
 [Install]
 WantedBy=multi-user.target
-</code>
+```
 
 3. Reload systemd to see the changes 
 ```
