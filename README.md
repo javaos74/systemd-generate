@@ -4,16 +4,17 @@ How to create systemd native service
 
 
 1. create user for service
-`
+```
 sudo adduser iperf -s /sbin/nologin 
-`
+```
 
 2. create service description file 
-`
-/etc/systemd/system/{myservice}.service
-`
+```
+vi /etc/systemd/system/{myservice}.service
+
 cat {myservice}.service
-`
+```
+<code>
 [Unit]
 Description=Tetration Linux Enforcer
 After=network.target
@@ -30,9 +31,9 @@ StandardError=null
 
 [Install]
 WantedBy=multi-user.target
-`
+</code>
 
 3. Reload systemd to see the changes 
-`
+```
 sudo systemctl daemon-reload
-`
+```
